@@ -30,12 +30,26 @@
             <version>${javaee-api.version}</version>
         </dependency>
 
+        <dependency>
+            <groupId>org.glassfish</groupId>
+            <artifactId>javax.json</artifactId>
+            <version>1.0.4</version>
+        </dependency>
+
         <!--Test Dependencies-->
 
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <version>4.12</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.assertj</groupId>
+            <artifactId>assertj-core</artifactId>
+            <!-- use 2.6.0 for Java 7 projects -->
+            <version>3.6.2</version>
             <scope>test</scope>
         </dependency>
 
@@ -51,43 +65,7 @@
             </activation>
             <build>
                 <plugins>
-                    <plugin>
-                        <groupId>org.codehaus.cargo</groupId>
-                        <artifactId>cargo-maven2-plugin</artifactId>
-                        <version>1.4.14</version>
-                        <configuration>
-                            <container>
-                                <containerId>glassfish4x</containerId>
-                                <zipUrlInstaller>
-                                    <url>http://download.java.net/glassfish/4.1/release/glassfish-4.1.zip</url>
-                                </zipUrlInstaller>
-                            </container>
-                            <deployables>
-                                <deployable>
-                                    <groupId>${project.groupId}</groupId>
-                                    <artifactId>${project.artifactId}</artifactId>
-                                    <type>war</type>
-                                    <properties>
-                                        <context>/rest-server</context>
-                                    </properties>
-                                </deployable>
-                            </deployables>
-                            <configuration>
-                                <properties>
-                                    <cargo.servlet.port>8081</cargo.servlet.port>
-                                    <cargo.glassfish.admin.port>4881</cargo.glassfish.admin.port>
-                                    <cargo.glassfish.jms.port>7681</cargo.glassfish.jms.port>
-                                    <cargo.glassfish.domain.jmxPort>8681</cargo.glassfish.domain.jmxPort>
-                                    <cargo.glassfish.http.ssl.port>8180</cargo.glassfish.http.ssl.port>
-                                    <cargo.glassfish.orb.ssl.port>3881</cargo.glassfish.orb.ssl.port>
-                                    <cargo.glassfish.orb.mutualauth.port>3981</cargo.glassfish.orb.mutualauth.port>
-                                    <cargo.glassfish.osgi.shell.telnet.port>6681
-                                    </cargo.glassfish.osgi.shell.telnet.port>
-                                    <cargo.glassfish.orb.listener.port>3781</cargo.glassfish.orb.listener.port>
-                                </properties>
-                            </configuration>
-                        </configuration>
-                    </plugin>
+
                 </plugins>
             </build>
         </profile>

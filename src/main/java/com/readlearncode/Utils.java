@@ -1,17 +1,13 @@
-package com.readlearncode.object.lesson1;
+package com.readlearncode;
 
 /**
  * Source code github.com/readlearncode
  *
- * Creating an object model from JSON Data
- *
  * @author Alex Theedom www.readlearncode.com
  * @version 1.0
  */
-public class example1 {
+public class Utils {
 
-
-
-
+    public static String ROOT = "resources";
 
 }
