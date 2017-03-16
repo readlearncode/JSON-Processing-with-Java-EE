@@ -1,6 +1,6 @@
 {
-  "Title": "JSON-Processing With Java EE",
-  "Chapters": [
+  "title": "JSON-Processing With Java EE",
+  "chapters": [
     "Introduction",
     "1. JSON and Java",
     "2. JSON-Processing API features",
@@ -8,21 +8,21 @@
     "4. The Java EE JSON Streaming model",
     "Conclusion"
   ],
-  "Released": true,
-  "Length": 90,
-  "Source Code": {
-    "Repository Name": "JSON-Processing-with-Java-EE",
-    "URL": "github.com/readlearncode"
+  "released": true,
+  "length": 90,
+  "sourceCode": {
+    "repositoryName": "JSON-Processing-with-Java-EE",
+    "url": "github.com/readlearncode"
   },
-  "Complementary Course": [
+  "complementaryCourse": [
     {
-      "Title": "RESTful Service with JAX-RS 2.0",
-      "Length": 120
+      "title": "RESTful Service with JAX-RS 2.0",
+      "length": 120
     },
     {
-      "Title": "Java Enterprise Edition Introduction",
-      "Length": 130
+      "title": "Java Enterprise Edition Introduction",
+      "length": 130
     }
   ],
-  "Other": null
+  "other": null
 }
