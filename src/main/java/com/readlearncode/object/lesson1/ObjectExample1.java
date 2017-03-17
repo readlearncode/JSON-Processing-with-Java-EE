@@ -21,7 +21,7 @@ public class ObjectExample1 {
             "    \"Introduction\",\n" +
             "    \"1. JSON and Java\",\n" +
             "    \"2. JSON-Processing API features\",\n" +
-            "    \"3. The Java EE JSON object model\",\n" +
+            "    \"3. The Java EE JSON Object model\",\n" +
             "    \"4. The Java EE JSON Streaming model\",\n" +
             "    \"Conclusion\"\n" +
             "  ],\n" +
