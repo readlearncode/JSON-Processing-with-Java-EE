@@ -18,14 +18,27 @@ public class ObjectExample5 {
         new ObjectExample5().printValue(jsonObject);
     }
 
+    /**
+     * Processes Array types
+     * @param jsonValues JsonArray type
+     */
     private void printValue(JsonArray jsonValues) {
         jsonValues.forEach(jsonValue -> printValue("", jsonValue));
     }
 
+    /**
+     * Processes JsonObject types
+     * @param jsonObject JsonObject type
+     */
     private void printValue(JsonObject jsonObject) {
         jsonObject.forEach(this::printValue);
     }
 
+    /**
+     * Delegates processing to appropriate printValue method based on type
+     * @param key String key value
+     * @param jsonValue JsonValue type
+     */
     private void printValue(String key, JsonValue jsonValue) {
         printKey(key);
         if (jsonValue instanceof JsonString) {
@@ -47,18 +60,34 @@ public class ObjectExample5 {
         printValue(jsonValue.toString());
     }
 
+    /**
+     * Prints the key name
+     * @param key the key name
+     */
     private void printKey(String key) {
         System.out.print(key);
     }
 
+    /**
+     * Prints the JsonString value
+     * @param jsonString the JsonString value
+     */
     private void printValue(JsonString jsonString) {
         printValue(jsonString.getString());
     }
 
+    /**
+     * Prints the JsonNumber value
+     * @param jsonNumber the JsonNumber value
+     */
     private void printValue(JsonNumber jsonNumber) {
         printValue(jsonNumber.toString());
     }
 
+    /**
+     * Prints the String vlaue to the console
+     * @param value the value to print
+     */
     private void printValue(String value) {
         System.out.println(" : " + value);
     }
