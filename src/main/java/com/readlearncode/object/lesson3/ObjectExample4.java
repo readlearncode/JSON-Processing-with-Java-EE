@@ -14,13 +14,13 @@ import java.io.FileNotFoundException;
 public class ObjectExample4 {
 
     public static void main(String... args) throws FileNotFoundException {
-        new ObjectExample4().navigateJsonStructure(new ObjectExample2().loadJsonObject(), null);
+        navigateJsonStructure(new ObjectExample2().loadJsonObject(), null);
     }
 
-    public  void navigateJsonStructure(JsonValue jsonValue, String key) {
+    private static void navigateJsonStructure(JsonValue jsonValue, String key) {
         if (key != null)
             printKey(key);
-        switch(jsonValue.getValueType()) {
+        switch (jsonValue.getValueType()) {
             case OBJECT:
                 JsonObject jsonObject = (JsonObject) jsonValue;
                 for (String name : jsonObject.keySet())
@@ -44,11 +44,11 @@ public class ObjectExample4 {
         }
     }
 
-    private void printKey(String key) {
+    private static void printKey(String key) {
         System.out.print(key + ": ");
     }
 
-    private void printValue(String x) {
+    private static void printValue(String x) {
         System.out.println(x);
     }
 
