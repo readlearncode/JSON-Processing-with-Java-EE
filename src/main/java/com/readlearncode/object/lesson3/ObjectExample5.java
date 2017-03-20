@@ -14,8 +14,7 @@ import java.io.FileNotFoundException;
 public class ObjectExample5 {
 
     public static void main(String... args) throws FileNotFoundException {
-        JsonObject jsonObject = new ObjectExample2().loadJsonObject();
-        new ObjectExample5().printValue(jsonObject);
+        new ObjectExample5().printValue(new ObjectExample2().loadJsonObject());
     }
 
     /**
@@ -85,7 +84,7 @@ public class ObjectExample5 {
     }
 
     /**
-     * Prints the String vlaue to the console
+     * Prints the String value to the console
      * @param value the value to print
      */
     private void printValue(String value) {
