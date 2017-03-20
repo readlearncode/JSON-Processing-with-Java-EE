@@ -18,32 +18,13 @@ public class ObjectExample5 {
     }
 
     /**
-     * Processes Array types
-     * @param jsonValues JsonArray type
-     */
-    private void printValue(JsonArray jsonValues) {
-        jsonValues.forEach(jsonValue -> printValue("", jsonValue));
-    }
-
-    /**
-     * Processes JsonObject types
-     * @param jsonObject JsonObject type
-     */
-    private void printValue(JsonObject jsonObject) {
-        jsonObject.forEach(this::printValue);
-    }
-
-    /**
      * Delegates processing to appropriate printValue method based on type
-     * @param key String key value
+     *
+     * @param key       String key value
      * @param jsonValue JsonValue type
      */
     private void printValue(String key, JsonValue jsonValue) {
         printKey(key);
-        if (jsonValue instanceof JsonString) {
-            printValue((JsonString) jsonValue);
-            return;
-        }
         if (jsonValue instanceof JsonArray) {
             printValue((JsonArray) jsonValue);
             return;
@@ -56,19 +37,34 @@ public class ObjectExample5 {
             printValue((JsonNumber) jsonValue);
             return;
         }
+        if (jsonValue instanceof JsonString) {
+            printValue((JsonString) jsonValue);
+            return;
+        }
         printValue(jsonValue.toString());
     }
 
     /**
-     * Prints the key name
-     * @param key the key name
+     * Processes Array types
+     *
+     * @param jsonValues JsonArray type
      */
-    private void printKey(String key) {
-        System.out.print(key);
+    private void printValue(JsonArray jsonValues) {
+        jsonValues.forEach(jsonValue -> printValue("", jsonValue));
+    }
+
+    /**
+     * Processes JsonObject types
+     *
+     * @param jsonObject JsonObject type
+     */
+    private void printValue(JsonObject jsonObject) {
+        jsonObject.forEach(this::printValue);
     }
 
     /**
      * Prints the JsonString value
+     *
      * @param jsonString the JsonString value
      */
     private void printValue(JsonString jsonString) {
@@ -77,6 +73,7 @@ public class ObjectExample5 {
 
     /**
      * Prints the JsonNumber value
+     *
      * @param jsonNumber the JsonNumber value
      */
     private void printValue(JsonNumber jsonNumber) {
@@ -85,10 +82,20 @@ public class ObjectExample5 {
 
     /**
      * Prints the String value to the console
+     *
      * @param value the value to print
      */
     private void printValue(String value) {
         System.out.println(" : " + value);
+    }
+
+    /**
+     * Prints the key name
+     *
+     * @param key the key name
+     */
+    private void printKey(String key) {
+        System.out.print(key);
     }
 
 }
