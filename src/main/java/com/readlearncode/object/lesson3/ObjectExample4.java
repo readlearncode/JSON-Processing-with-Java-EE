@@ -13,95 +13,43 @@ import java.io.FileNotFoundException;
  */
 public class ObjectExample4 {
 
-    private String valueIndent = "";
-    private String keyIndent = "";
-    private String separator = " : ";
-
     public static void main(String... args) throws FileNotFoundException {
-        new ObjectExample4().navigateJsonStructure();
+        new ObjectExample4().navigateJsonStructure(new ObjectExample2().loadJsonObject(), null);
     }
 
-    private void navigateJsonStructure() throws FileNotFoundException {
-        JsonObject jsonObject = new ObjectExample2().loadJsonObject();
-        printValue(jsonObject);
-    }
-
-    private void printValue(JsonArray jsonValues) {
-        setValueIndent();
-        System.out.println("");
-        jsonValues.forEach(jsonValue -> printValue("", jsonValue));
-        unsetValueIndent();
-    }
-
-    private void printValue(JsonObject jsonObject) {
-        jsonObject.forEach(this::printValue);
-    }
-
-    private void printValue(String key, JsonValue jsonValue) {
-        printKey(key);
-        if (jsonValue instanceof JsonString) {
-            setSeparator();
-            printValue((JsonString) jsonValue);
-            return;
+    public  void navigateJsonStructure(JsonValue jsonValue, String key) {
+        if (key != null)
+            printKey(key);
+        switch(jsonValue.getValueType()) {
+            case OBJECT:
+                JsonObject jsonObject = (JsonObject) jsonValue;
+                for (String name : jsonObject.keySet())
+                    navigateJsonStructure(jsonObject.get(name), name);
+                break;
+            case ARRAY:
+                for (JsonValue value : (JsonArray) jsonValue)
+                    navigateJsonStructure(value, null);
+                break;
+            case STRING:
+                printValue(((JsonString) jsonValue).getString());
+                break;
+            case NUMBER:
+                printValue(jsonValue.toString());
+                break;
+            case TRUE:
+            case FALSE:
+            case NULL:
+                printValue(jsonValue.getValueType().toString());
+                break;
         }
-        if (jsonValue instanceof JsonArray) {
-            unsetSeparator();
-            printValue((JsonArray) jsonValue);
-            setSeparator();
-            return;
-        }
-        if (jsonValue instanceof JsonObject) {
-            System.out.println("");
-            setKeyIndent();
-            unsetValueIndent();
-            printValue((JsonObject) jsonValue);
-            unsetKeyIndent();
-            return;
-        }
-        if (jsonValue instanceof JsonNumber) {
-            printValue((JsonNumber) jsonValue);
-            return;
-        }
-        printValue(jsonValue.toString());
     }
 
     private void printKey(String key) {
-        System.out.print(keyIndent + key);
+        System.out.print(key + ": ");
     }
 
-    private void printValue(JsonString jsonString) {
-        printValue(jsonString.getString());
+    private void printValue(String x) {
+        System.out.println(x);
     }
 
-    private void printValue(JsonNumber jsonNumber) {
-        printValue(jsonNumber.toString());
-    }
-
-    private void printValue(String value) {
-        System.out.println(valueIndent + separator + value);
-    }
-
-    private void unsetValueIndent() {
-        valueIndent = "";
-    }
-
-    private void setValueIndent() {
-        valueIndent = "-----";
-    }
-
-    private void setKeyIndent() {
-        keyIndent = "-----";
-    }
-
-    private void unsetKeyIndent() {
-        keyIndent = "";
-    }
-
-    private void setSeparator() {
-        separator = " : ";
-    }
-
-    private void unsetSeparator() {
-        separator = "";
-    }
 }

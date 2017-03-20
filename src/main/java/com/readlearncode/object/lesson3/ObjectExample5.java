@@ -14,42 +14,53 @@ import java.io.FileNotFoundException;
 public class ObjectExample5 {
 
     public static void main(String... args) throws FileNotFoundException {
-        new ObjectExample5().navigateJsonStructure(new ObjectExample2().loadJsonObject(), null);
+        JsonObject jsonObject = new ObjectExample2().loadJsonObject();
+        new ObjectExample5().printValue(jsonObject);
     }
 
-    public  void navigateJsonStructure(JsonValue jsonValue, String key) {
-        if (key != null)
-            printKey(key);
-        switch(jsonValue.getValueType()) {
-            case OBJECT:
-                JsonObject jsonObject = (JsonObject) jsonValue;
-                for (String name : jsonObject.keySet())
-                    navigateJsonStructure(jsonObject.get(name), name);
-                break;
-            case ARRAY:
-                for (JsonValue value : (JsonArray) jsonValue)
-                    navigateJsonStructure(value, null);
-                break;
-            case STRING:
-                printValue(((JsonString) jsonValue).getString());
-                break;
-            case NUMBER:
-                printValue(jsonValue.toString());
-                break;
-            case TRUE:
-            case FALSE:
-            case NULL:
-                printValue(jsonValue.getValueType().toString());
-                break;
+    private void printValue(JsonArray jsonValues) {
+        jsonValues.forEach(jsonValue -> printValue("", jsonValue));
+    }
+
+    private void printValue(JsonObject jsonObject) {
+        jsonObject.forEach(this::printValue);
+    }
+
+    private void printValue(String key, JsonValue jsonValue) {
+        printKey(key);
+        if (jsonValue instanceof JsonString) {
+            printValue((JsonString) jsonValue);
+            return;
         }
+        if (jsonValue instanceof JsonArray) {
+            printValue((JsonArray) jsonValue);
+            return;
+        }
+        if (jsonValue instanceof JsonObject) {
+            printValue((JsonObject) jsonValue);
+            return;
+        }
+        if (jsonValue instanceof JsonNumber) {
+            printValue((JsonNumber) jsonValue);
+            return;
+        }
+        printValue(jsonValue.toString());
     }
 
     private void printKey(String key) {
-        System.out.print(key + ": ");
+        System.out.print(key);
     }
 
-    private void printValue(String x) {
-        System.out.println(x);
+    private void printValue(JsonString jsonString) {
+        printValue(jsonString.getString());
+    }
+
+    private void printValue(JsonNumber jsonNumber) {
+        printValue(jsonNumber.toString());
+    }
+
+    private void printValue(String value) {
+        System.out.println(" : " + value);
     }
 
 }
