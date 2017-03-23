@@ -30,6 +30,8 @@ public class ObjectExample7 {
             jsonWriter.writeObject(new ObjectExample3().buildJsonDocument());
 
             jsonWriter.close();
+
+            // Flush and close file output streams
             fileOutputStream.flush();
             fileOutputStream.close();
         }
