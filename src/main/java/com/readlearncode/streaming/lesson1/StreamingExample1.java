@@ -20,6 +20,7 @@ public class StreamingExample1 {
     private static void parseJsonString() {
 
         JsonParser parser = Json.createParser(new StringReader(JSON));
+
         while (parser.hasNext()) {
             JsonParser.Event event = parser.next();
             switch (event) {

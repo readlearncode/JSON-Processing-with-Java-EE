@@ -4,6 +4,9 @@ import javax.json.Json;
 import javax.json.stream.JsonParser;
 import java.io.StringReader;
 
+import static javax.json.stream.JsonParser.Event.VALUE_NUMBER;
+import static javax.json.stream.JsonParser.Event.VALUE_STRING;
+
 /**
  * Source code github.com/readlearncode
  *
@@ -13,17 +16,19 @@ import java.io.StringReader;
 public class StreamingExample2 {
 
 
-    public String retrieveValue(final String key_to_find) {
+    public String retrieveValue(final String key_to_find, final String json) {
 
-        JsonParser parser = Json.createParser(new StringReader(JSON));
+        JsonParser parser = Json.createParser(new StringReader(json));
 
         while (parser.hasNext()) {
             JsonParser.Event event = parser.next();
             switch (event) {
                 case KEY_NAME:
                     if (parser.getString().equalsIgnoreCase(key_to_find)) {
-                        parser.next();
-                        return parser.getString();
+                        event = parser.next();
+                        if (event == VALUE_STRING || event == VALUE_NUMBER) {
+                            return parser.getString();
+                        }
                     }
                     break;
             }
@@ -32,33 +37,5 @@ public class StreamingExample2 {
         return null;
     }
 
-    private static String JSON = "{\n" +
-            "  \"title\": \"JSON-Processing With Java EE\",\n" +
-            "  \"chapters\": [\n" +
-            "    \"Introduction\",\n" +
-            "    \"1. JSON and Java\",\n" +
-            "    \"2. JSON-Processing API features\",\n" +
-            "    \"3. The Java EE JSON Object model\",\n" +
-            "    \"4. The Java EE JSON Streaming model\",\n" +
-            "    \"Conclusion\"\n" +
-            "  ],\n" +
-            "  \"released\": true,\n" +
-            "  \"length\": 90,\n" +
-            "  \"sourceCode\": {\n" +
-            "    \"repositoryName\": \"JSON-Processing-with-Java-EE\",\n" +
-            "    \"url\": \"github.com/readlearncode\"\n" +
-            "  },\n" +
-            "  \"complementaryCourse\": [\n" +
-            "    {\n" +
-            "      \"title\": \"RESTful Service with JAX-RS 2.0\",\n" +
-            "      \"length\": 120\n" +
-            "    },\n" +
-            "    {\n" +
-            "      \"title\": \"Java Enterprise Edition Introduction\",\n" +
-            "      \"length\": 130\n" +
-            "    }\n" +
-            "  ],\n" +
-            "  \"notes\": null\n" +
-            "}";
 
 }
