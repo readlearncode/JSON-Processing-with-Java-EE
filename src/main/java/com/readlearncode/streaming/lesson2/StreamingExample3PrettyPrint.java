@@ -3,7 +3,9 @@ package com.readlearncode.streaming.lesson2;
 import javax.json.Json;
 import javax.json.JsonValue;
 import javax.json.stream.JsonGenerator;
+import javax.json.stream.JsonGeneratorFactory;
 import java.io.StringWriter;
+import java.util.Collections;
 
 /**
  * Source code github.com/readlearncode
@@ -11,14 +13,20 @@ import java.io.StringWriter;
  * @author Alex Theedom www.readlearncode.com
  * @version 1.0
  */
-public class StreamingExample3 {
+public class StreamingExample3PrettyPrint {
+
+    public static void main(String ...args){
+        writeJsonStreamToString();
+    }
 
 
-    public String writeJsonStreamToString(){
+    public static void writeJsonStreamToString(){
 
         StringWriter stringWriter = new StringWriter();
 
-        JsonGenerator generator = Json.createGenerator(stringWriter);
+        JsonGeneratorFactory jsonGeneratorFactory = Json.createGeneratorFactory(Collections.singletonMap(JsonGenerator.PRETTY_PRINTING, true));
+        JsonGenerator generator = jsonGeneratorFactory.createGenerator(stringWriter);
+
         generator.writeStartObject()
                     .write("title","JSON-Processing With Java EE")
                     .writeStartArray("chapters")
@@ -49,8 +57,8 @@ public class StreamingExample3 {
                 .writeEnd();
         generator.close();
 
-        return stringWriter.toString();
-    }
+        System.out.print(stringWriter.toString());
 
+    }
 
 }

@@ -25,7 +25,7 @@ public class StreamingExample4 {
 
             JsonGenerator generator = Json.createGenerator(fileOutputStream);
             generator.writeStartObject()
-                    .write("title", "JSON-Processing With Java EE")
+                    .write("title","JSON-Processing With Java EE")
                     .writeStartArray("chapters")
                     .write("Introduction")
                     .write("1. JSON and Java")
@@ -34,11 +34,11 @@ public class StreamingExample4 {
                     .write("4. The Java EE JSON Streaming model")
                     .write("Conclusion")
                     .writeEnd()
-                    .write("released", JsonValue.TRUE)
-                    .write("length", 90)
+                    .write("released",JsonValue.TRUE)
+                    .write("length",90)
                     .writeStartObject("sourceCode")
                     .write("repositoryName", "JSON-Processing-with-Java-EE")
-                    .write("url", "github.com/readlearncode")
+                    .write("url","github.com/readlearncode")
                     .writeEnd()
                     .writeStartArray("complementaryCourse")
                     .writeStartObject()
