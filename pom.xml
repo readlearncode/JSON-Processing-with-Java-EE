@@ -6,8 +6,22 @@
     <groupId>com.readlearncode</groupId>
     <artifactId>json-processing-with-java-ee</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <modules>
+        <module>object-lesson-2-start</module>
+        <module>object-lesson-2-end</module>
+        <module>object-lesson-3-start</module>
+        <module>object-lesson-3-end</module>
+        <module>object-lesson-4-start</module>
+        <module>object-lesson-4-end</module>
+        <module>object-lesson-5-start</module>
+        <module>object-lesson-5-end</module>
+        <module>streaming-lesson-2-start</module>
+        <module>streaming-lesson-2-end</module>
+        <module>streaming-lesson-5-start</module>
+        <module>streaming-lesson-5-end</module>
+    </modules>
 
-    <packaging>war</packaging>
+    <packaging>pom</packaging>
     <name>JSON-Processing-with-Java-EE</name>
     <url>readlearncode.com</url>
 
