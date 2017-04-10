@@ -52,7 +52,8 @@ public class ObjectExample1 {
      */
     public JsonObject loadJsonString(){
 
-        // Implement code that parses the JSON string to a JSON object using the object model.
+        // Implement code that parses the JSON string to a
+        // JSON object using the object model.
 
         return null;
     }
