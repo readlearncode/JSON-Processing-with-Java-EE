@@ -1,7 +1,6 @@
-package lesson2;
+package com.readlearncode.object.lesson2;
 
 import org.junit.Test;
-import readlearncode.object.lesson2.ObjectExample1;
 
 import javax.json.JsonObject;
 

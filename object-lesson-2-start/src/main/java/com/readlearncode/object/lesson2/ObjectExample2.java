@@ -1,10 +1,9 @@
-package readlearncode.object.lesson2;
+package com.readlearncode.object.lesson2;
 
 import javax.json.*;
 import java.io.FileNotFoundException;
-import java.io.FileReader;
 
-import static readlearncode.Utils.ROOT;
+import static com.readlearncode.Utils.ROOT;
 
 /**
  * Source code github.com/readlearncode
@@ -27,10 +26,9 @@ public class ObjectExample2 {
 
         String jsonFile = ROOT + System.getProperty("file.separator") + "example1-jsondata-object.json";
 
-        JsonReader reader = Json.createReader(new FileReader(jsonFile));
-        JsonObject jsonObject = reader.readObject();
+        // Implement code that loads the file and creates a JSON object from the files contents
 
-        return jsonObject;
+        return null;
 
     }
 
@@ -44,27 +42,9 @@ public class ObjectExample2 {
 
         String jsonFile = ROOT + System.getProperty("file.separator") + "example1-jsondata-array.json";
 
-        JsonReader reader = Json.createReader(new FileReader(jsonFile));
-        JsonArray jsonArray = reader.readArray();
+        // Implement code that loads JSON array data from a flat-file and creates a JsonArray object
 
-        return jsonArray;
-    }
-
-
-    /**
-     * Builds a JsonStructute from a flat-file source containing Json Array data.
-     *
-     * @return a JsonStructure built from the flat-file
-     * @throws FileNotFoundException
-     */
-    public JsonStructure loadJsonStructure() throws FileNotFoundException {
-
-        String jsonFile = ROOT + System.getProperty("file.separator") + "example1-jsondata-array.json";
-
-        JsonReader reader = Json.createReader(new FileReader(jsonFile));
-        JsonStructure jsonStructure = reader.read();
-
-        return jsonStructure;
+        return null;
     }
 
 }

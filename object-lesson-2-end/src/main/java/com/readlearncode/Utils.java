@@ -1,4 +1,4 @@
-package readlearncode;
+package com.readlearncode;
 
 /**
  * Source code github.com/readlearncode

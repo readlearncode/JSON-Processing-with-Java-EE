@@ -1,4 +1,4 @@
-package readlearncode.object.lesson2;
+package com.readlearncode.object.lesson2;
 
 import javax.json.Json;
 import javax.json.JsonObject;

@@ -1,7 +1,6 @@
-package lesson2;
+package com.readlearncode.object.lesson2;
 
 import org.junit.Test;
-import readlearncode.object.lesson2.ObjectExample2;
 
 import javax.json.*;
 
@@ -25,7 +24,7 @@ public class ObjectExample2Test {
         JsonObject jsonObject = objectExample2.loadJsonObject();
 
         // Assert
-        assertThat(jsonObject.getValueType()).isEqualTo(JsonValue.ValueType.OBJECT);
+        // Implement code that asserts the value type is JsonValue.ValueType.OBJECT
     }
 
     @Test
@@ -38,21 +37,8 @@ public class ObjectExample2Test {
         JsonArray jsonArray = objectExample2.loadJsonArray();
 
         // Assert
-        assertThat(jsonArray.getValueType()).isEqualTo(JsonValue.ValueType.ARRAY);
-    }
+        // Implement code that asserts the value type is JsonValue.ValueType.ARRAY
 
-
-    @Test
-    public void givenJsonArrayDataInFlatFile_readsDataIntoJsonStructure() throws Exception {
-
-        // Arrange
-        ObjectExample2 objectExample2 = new ObjectExample2();
-
-        // Act
-        JsonStructure jsonStructure = objectExample2.loadJsonStructure();
-
-        // Assert
-        assertThat(jsonStructure.getValueType()).isEqualTo(JsonValue.ValueType.ARRAY);
     }
 
 }
