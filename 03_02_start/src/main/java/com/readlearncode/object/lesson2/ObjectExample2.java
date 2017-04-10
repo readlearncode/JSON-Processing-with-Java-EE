@@ -24,7 +24,7 @@ public class ObjectExample2 {
      */
     public JsonObject loadJsonObject() throws FileNotFoundException {
 
-        String jsonFile = ROOT + System.getProperty("file.separator") + "example1-jsondata-object.json";
+        String jsonFile = ROOT + System.getProperty("file.separator") + "jsondata-object.json";
 
         // Implement code that loads the file and creates a JSON object from the files contents
 
@@ -40,7 +40,7 @@ public class ObjectExample2 {
      */
     public JsonArray loadJsonArray() throws FileNotFoundException {
 
-        String jsonFile = ROOT + System.getProperty("file.separator") + "example1-jsondata-array.json";
+        String jsonFile = ROOT + System.getProperty("file.separator") + "jsondata-array.json";
 
         // Implement code that loads JSON array data from a flat-file and creates a JsonArray object
 
