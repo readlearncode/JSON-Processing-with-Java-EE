@@ -12,17 +12,17 @@
 
     <modules>
         <module>03_02_start</module>
-        <module>object-lesson-2-end</module>
-        <module>object-lesson-3-start</module>
-        <module>object-lesson-3-end</module>
-        <module>object-lesson-4-start</module>
-        <module>object-lesson-4-end</module>
-        <module>object-lesson-5-start</module>
-        <module>object-lesson-5-end</module>
-        <module>streaming-lesson-2-start</module>
-        <module>streaming-lesson-2-end</module>
-        <module>streaming-lesson-5-start</module>
-        <module>streaming-lesson-5-end</module>
+        <module>03_02_end</module>
+        <module>03_03_start</module>
+        <module>03_03_end</module>
+        <module>03_04_start</module>
+        <module>03_04_end</module>
+        <module>03_05_start</module>
+        <module>03_05_end</module>
+        <module>04_02_start</module>
+        <module>04_02_end</module>
+        <module>04_03_start</module>
+        <module>04_03_end</module>
     </modules>
 
     <packaging>pom</packaging>

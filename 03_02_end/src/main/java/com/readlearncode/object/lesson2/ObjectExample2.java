@@ -23,7 +23,7 @@ public class ObjectExample2 {
      */
     public JsonObject loadJsonObject() throws FileNotFoundException {
 
-        String jsonFile = Utils.ROOT + System.getProperty("file.separator") + "jsondata-object.json";
+        String jsonFile = Utils.ROOT + System.getProperty("file.separator") + "example1-jsondata-object.json";
 
         JsonReader reader = Json.createReader(new FileReader(jsonFile));
         JsonObject jsonObject = reader.readObject();
@@ -40,7 +40,7 @@ public class ObjectExample2 {
      */
     public JsonArray loadJsonArray() throws FileNotFoundException {
 
-        String jsonFile = Utils.ROOT + System.getProperty("file.separator") + "jsondata-array.json";
+        String jsonFile = Utils.ROOT + System.getProperty("file.separator") + "example1-jsondata-array.json";
 
         JsonReader reader = Json.createReader(new FileReader(jsonFile));
         JsonArray jsonArray = reader.readArray();
@@ -57,7 +57,7 @@ public class ObjectExample2 {
      */
     public JsonStructure loadJsonStructure() throws FileNotFoundException {
 
-        String jsonFile = Utils.ROOT + System.getProperty("file.separator") + "jsondata-array.json";
+        String jsonFile = Utils.ROOT + System.getProperty("file.separator") + "example1-jsondata-array.json";
 
         JsonReader reader = Json.createReader(new FileReader(jsonFile));
         JsonStructure jsonStructure = reader.read();
