@@ -3,7 +3,7 @@ package com.readlearncode.object.lesson2;
 import javax.json.*;
 import java.io.FileNotFoundException;
 
-import static com.readlearncode.Utils.ROOT;
+import static com.readlearncode.object.lesson2.Utils.ROOT;
 
 /**
  * Source code github.com/readlearncode

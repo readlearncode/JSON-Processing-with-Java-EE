@@ -1,7 +1,5 @@
 package com.readlearncode.object.lesson2;
 
-import com.readlearncode.Utils;
-
 import javax.json.*;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
