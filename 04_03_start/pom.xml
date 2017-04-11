@@ -10,8 +10,6 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
 
-    <artifactId>streaming-lesson-5-start</artifactId>
-
-    <name>04_03_start</name>
+    <artifactId>04_03_start</artifactId>
 
 </project>

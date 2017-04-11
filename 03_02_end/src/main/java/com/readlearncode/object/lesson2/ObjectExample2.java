@@ -14,6 +14,8 @@ import java.io.FileReader;
  */
 public class ObjectExample2 {
 
+    private String jsonFileArray = Utils.ROOT + System.getProperty("file.separator") + "jsondata-array.json";
+    private String jsonFileObject = Utils.ROOT + System.getProperty("file.separator") + "jsondata-object.json";
 
     /**
      * Builds a JsonObject from a flat-file source containing Json data.
@@ -23,9 +25,7 @@ public class ObjectExample2 {
      */
     public JsonObject loadJsonObject() throws FileNotFoundException {
 
-        String jsonFile = Utils.ROOT + System.getProperty("file.separator") + "example1-jsondata-object.json";
-
-        JsonReader reader = Json.createReader(new FileReader(jsonFile));
+        JsonReader reader = Json.createReader(new FileReader(jsonFileObject));
         JsonObject jsonObject = reader.readObject();
 
         return jsonObject;
@@ -40,29 +40,11 @@ public class ObjectExample2 {
      */
     public JsonArray loadJsonArray() throws FileNotFoundException {
 
-        String jsonFile = Utils.ROOT + System.getProperty("file.separator") + "example1-jsondata-array.json";
-
-        JsonReader reader = Json.createReader(new FileReader(jsonFile));
+        JsonReader reader = Json.createReader(new FileReader(jsonFileArray));
         JsonArray jsonArray = reader.readArray();
 
         return jsonArray;
     }
 
-
-    /**
-     * Builds a JsonStructute from a flat-file source containing Json Array data.
-     *
-     * @return a JsonStructure built from the flat-file
-     * @throws FileNotFoundException
-     */
-    public JsonStructure loadJsonStructure() throws FileNotFoundException {
-
-        String jsonFile = Utils.ROOT + System.getProperty("file.separator") + "example1-jsondata-array.json";
-
-        JsonReader reader = Json.createReader(new FileReader(jsonFile));
-        JsonStructure jsonStructure = reader.read();
-
-        return jsonStructure;
-    }
 
 }

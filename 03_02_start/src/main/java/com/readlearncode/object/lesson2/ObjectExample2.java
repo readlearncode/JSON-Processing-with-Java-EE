@@ -15,6 +15,8 @@ import static com.readlearncode.object.lesson2.Utils.ROOT;
  */
 public class ObjectExample2 {
 
+    private String jsonFileArray = Utils.ROOT + System.getProperty("file.separator") + "jsondata-array.json";
+    private String jsonFileObject = Utils.ROOT + System.getProperty("file.separator") + "jsondata-object.json";
 
     /**
      * Builds a JsonObject from a flat-file source containing Json data.
@@ -23,8 +25,6 @@ public class ObjectExample2 {
      * @throws FileNotFoundException
      */
     public JsonObject loadJsonObject() throws FileNotFoundException {
-
-        String jsonFile = ROOT + System.getProperty("file.separator") + "jsondata-object.json";
 
         // Implement code that loads the file and creates a JSON object from the files contents
 
@@ -39,8 +39,6 @@ public class ObjectExample2 {
      * @throws FileNotFoundException
      */
     public JsonArray loadJsonArray() throws FileNotFoundException {
-
-        String jsonFile = ROOT + System.getProperty("file.separator") + "jsondata-array.json";
 
         // Implement code that loads JSON array data from a flat-file and creates a JsonArray object
 
