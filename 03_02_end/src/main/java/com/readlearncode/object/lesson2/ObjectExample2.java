@@ -47,4 +47,18 @@ public class ObjectExample2 {
     }
 
 
+    /**
+     * Builds a JsonStructute from a flat-file source containing Json Array data.
+     *
+     * @return a JsonStructure built from the flat-file
+     * @throws FileNotFoundException
+     */
+    public JsonStructure loadJsonStructure() throws FileNotFoundException {
+
+        JsonReader reader = Json.createReader(new FileReader(jsonFileArray));
+        JsonStructure jsonStructure = reader.read();
+
+        return jsonStructure;
+    }
+
 }

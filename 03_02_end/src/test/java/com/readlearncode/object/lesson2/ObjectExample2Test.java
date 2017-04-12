@@ -40,4 +40,18 @@ public class ObjectExample2Test {
         assertThat(jsonArray.getValueType()).isEqualTo(JsonValue.ValueType.ARRAY);
     }
 
+
+    @Test
+    public void givenJsonArrayDataInFlatFile_readsDataIntoJsonStructure() throws Exception {
+
+        // Arrange
+        ObjectExample2 objectExample2 = new ObjectExample2();
+
+        // Act
+        JsonStructure jsonStructure = objectExample2.loadJsonStructure();
+
+        // Assert
+        assertThat(jsonStructure.getValueType()).isEqualTo(JsonValue.ValueType.ARRAY);
+    }
+
 }
