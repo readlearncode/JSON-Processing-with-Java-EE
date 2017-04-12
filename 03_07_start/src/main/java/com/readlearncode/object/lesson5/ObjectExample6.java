@@ -16,12 +16,9 @@ public class ObjectExample6 {
 
     public String writeJsonStructure() {
 
-        StringWriter stringWriter = new StringWriter();
-        JsonWriter jsonWriter = Json.createWriter(stringWriter);
-        jsonWriter.writeObject(buildJsonDocument());
-        jsonWriter.close();
+        // Implement code that writes the JSON object to a String
 
-        return stringWriter.toString();
+        return null;
     }
 
     private JsonObject buildJsonDocument() {
