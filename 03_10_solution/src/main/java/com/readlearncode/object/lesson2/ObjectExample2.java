@@ -15,30 +15,6 @@ import java.io.FileReader;
 public class ObjectExample2 {
 
     private String jsonFileArray = Utils.ROOT + System.getProperty("file.separator") + "jsondata-array.json";
-    private String jsonFileObject = Utils.ROOT + System.getProperty("file.separator") + "jsondata-object.json";
-
-    /**
-     * Builds a JsonObject from a flat-file source containing Json data.
-     *
-     * @return a JsonObject built from the flat-file
-     * @throws FileNotFoundException
-     */
-    public JsonObject loadJsonObject() throws FileNotFoundException {
-
-        JsonReader reader = Json.createReader(new FileReader(jsonFileObject));
-        JsonObject jsonObject = reader.readObject();
-
-        return jsonObject;
-
-    }
-
-
-
-
-
-
-
-
 
     /**
      * Builds a JsonArray from a flat-file source containing Json Array data.

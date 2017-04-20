@@ -14,18 +14,6 @@ import static org.assertj.core.api.Java6Assertions.assertThat;
  */
 public class ObjectExample2Test {
 
-    @Test
-    public void givenJsonDateInFlatFile_readsDataIntoJsonObject() throws Exception {
-
-        // Arrange
-        ObjectExample2 objectExample2 = new ObjectExample2();
-
-        // Act
-        JsonObject jsonObject = objectExample2.loadJsonObject();
-
-        // Assert
-        assertThat(jsonObject.getValueType()).isEqualTo(JsonValue.ValueType.OBJECT);
-    }
 
     @Test
     public void givenJsonArrayDataInFlatFile_readsDataIntoJsonArray() throws Exception {
