@@ -21,10 +21,15 @@
         <module>03_07_end</module>
         <module>03_08_start</module>
         <module>03_08_end</module>
+        <module>03_10_solution</module>
+        <module>03_12_solution</module>
+        <module>03_14_solution</module>
         <module>04_02_start</module>
         <module>04_02_end</module>
         <module>04_03_start</module>
         <module>04_03_end</module>
+        <module>04_05_solution</module>
+        <module>04_07_solution</module>
     </modules>
 
     <packaging>pom</packaging>
