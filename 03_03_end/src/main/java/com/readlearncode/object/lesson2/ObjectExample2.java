@@ -40,23 +40,6 @@ public class ObjectExample2 {
 
 
 
-    /**
-     * Builds a JsonArray from a flat-file source containing Json Array data.
-     *
-     * @return a JsonArray built from the flat-file
-     * @throws FileNotFoundException
-     */
-    public JsonArray loadJsonArray() throws FileNotFoundException {
-
-        JsonReader reader = Json.createReader(new FileReader(jsonFileArray));
-        JsonArray jsonArray = reader.readArray();
-
-        return jsonArray;
-    }
-
-
-
-
 
 
 
