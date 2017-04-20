@@ -11,7 +11,6 @@ import javax.json.JsonObject;
  */
 public class ObjectExample3 {
 
-
     public JsonObject buildJsonDocument() {
 
         JsonObject jsonObject = Json.createObjectBuilder()
