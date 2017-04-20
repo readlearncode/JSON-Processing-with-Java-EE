@@ -27,10 +27,6 @@ public class ObjectExample2Test {
         assertThat(jsonObject.getValueType()).isEqualTo(JsonValue.ValueType.OBJECT);
     }
 
-
-
-
-
     @Test
     public void givenJsonArrayDataInFlatFile_readsDataIntoJsonArray() throws Exception {
 
