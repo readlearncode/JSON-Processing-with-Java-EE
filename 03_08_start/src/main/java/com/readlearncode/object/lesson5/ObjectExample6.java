@@ -4,9 +4,7 @@ package com.readlearncode.object.lesson5;
 import javax.json.Json;
 import javax.json.JsonObject;
 import javax.json.JsonWriter;
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
+import java.io.StringWriter;
 
 /**
  * Source code github.com/readlearncode
@@ -14,31 +12,16 @@ import java.io.IOException;
  * @author Alex Theedom www.readlearncode.com
  * @version 1.0
  */
-public class ObjectExample7 {
+public class ObjectExample6 {
 
-    public static void main(String... arg) throws IOException {
+    public String writeJsonStructure() {
 
-        File file = new File("json-output.json");
+        // Implement code that writes the JSON object to a String
 
-        try (FileOutputStream fileOutputStream = new FileOutputStream(file)) {
-
-            if (!file.exists()) {
-                file.createNewFile();
-            }
-
-            JsonWriter jsonWriter = Json.createWriter(fileOutputStream);
-            jsonWriter.writeObject(buildJsonDocument());
-
-            jsonWriter.close();
-
-            // Flush and close file output streams
-            fileOutputStream.flush();
-            fileOutputStream.close();
-        }
-
+        return null;
     }
 
-    private static JsonObject buildJsonDocument() {
+    private JsonObject buildJsonDocument() {
 
         JsonObject jsonObject = Json.createObjectBuilder()
                 .add("title", "JSON-Processing With Java EE")
