@@ -1,7 +1,6 @@
 package com.readlearncode.object.lesson3;
 
 import org.junit.Test;
-import com.readlearncode.object.lesson3.ObjectExample3;
 
 import javax.json.JsonObject;
 
@@ -26,15 +25,8 @@ public class ObjectExample3Test {
         JsonObject jsonObject = objectExample3.buildJsonDocument();
 
         // Assert
-        assertThat(jsonObject.getString("title")).isEqualTo("JSON-Processing With Java EE");
-        assertThat(jsonObject.getJsonArray("chapters").size()).isEqualTo(6);
-        assertThat(jsonObject.getBoolean("released")).isTrue();
-        assertThat(jsonObject.getInt("length")).isEqualTo(90);
-        assertThat(jsonObject.getJsonObject("sourceCode").getString("repositoryName")).isEqualTo("JSON-Processing-with-Java-EE");
-        assertThat(jsonObject.getJsonObject("sourceCode").getString("url")).isEqualTo("github.com/readlearncode");
-        assertThat(jsonObject.getJsonArray("complementaryCourse").getJsonObject(0).getString("title")).isEqualTo("RESTful Service with JAX-RS 2.0");
-        assertThat(jsonObject.getJsonArray("complementaryCourse").getJsonObject(1).getInt("length")).isEqualTo(130);
-        assertThat(jsonObject.isNull("notes")).isTrue();
+        // Implement code that asserts each element of the JSON document has been
+        // appropriately interpreted and loaded into a JSON object.
 
     }
 }

@@ -11,12 +11,33 @@ import javax.json.JsonObject;
  */
 public class ObjectExample3 {
 
-
     public JsonObject buildJsonDocument() {
 
-        // Use builders to construct the course JSON object
+        JsonObject jsonObject = Json.createObjectBuilder()
+                .add("title", "JSON-Processing With Java EE")
+                .add("chapters", Json.createArrayBuilder()
+                        .add("Introduction")
+                        .add("1. JSON and Java")
+                        .add("2. JSON-Processing API features")
+                        .add("3. The Java EE JSON Object model")
+                        .add("4. The Java EE JSON Streaming model")
+                        .add("Conclusion"))
+                .add("released", true)
+                .add("length", 90)
+                .add("sourceCode", Json.createObjectBuilder()
+                        .add("repositoryName", "JSON-Processing-with-Java-EE")
+                        .add("url", "github.com/readlearncode"))
+                .add("complementaryCourse", Json.createArrayBuilder()
+                        .add(Json.createObjectBuilder()
+                                .add("title", "RESTful Service with JAX-RS 2.0")
+                                .add("length", 120))
+                        .add(Json.createObjectBuilder()
+                                .add("title", "Java Enterprise Edition Introduction")
+                                .add("length", 130)))
+                .addNull("notes")
+                .build();
 
-        return null;
+        return jsonObject;
     }
 
 
