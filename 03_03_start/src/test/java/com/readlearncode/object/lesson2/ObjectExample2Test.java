@@ -24,31 +24,7 @@ public class ObjectExample2Test {
         JsonObject jsonObject = objectExample2.loadJsonObject();
 
         // Assert
-        assertThat(jsonObject.getValueType()).isEqualTo(JsonValue.ValueType.OBJECT);
-    }
-
-
-
-
-
-
-
-
-
-
-
-
-    @Test
-    public void givenJsonArrayDataInFlatFile_readsDataIntoJsonStructure() throws Exception {
-
-        // Arrange
-        ObjectExample2 objectExample2 = new ObjectExample2();
-
-        // Act
-        JsonStructure jsonStructure = objectExample2.loadJsonStructure();
-
-        // Assert
-        assertThat(jsonStructure.getValueType()).isEqualTo(JsonValue.ValueType.ARRAY);
+        // Implement code that asserts the JsonValue type is OBJECT
     }
 
 }
