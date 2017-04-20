@@ -25,13 +25,8 @@ public class ObjectExample1Test {
         JsonObject jsonObject = objectExample1.loadJsonString();
 
         // Assert
-        assertThat(jsonObject.getString("title")).isEqualTo("JSON-Processing With Java EE");
-        assertThat(jsonObject.getJsonArray("chapters").size()).isEqualTo(6);
-        assertThat(jsonObject.getBoolean("released")).isTrue();
-        assertThat(jsonObject.getInt("length")).isEqualTo(90);
-        assertThat(jsonObject.getJsonObject("sourceCode").getString("url")).isEqualTo("github.com/readlearncode");
-        assertThat(jsonObject.getJsonArray("complementaryCourse").getJsonObject(0).getString("title")).isEqualTo("RESTful Service with JAX-RS 2.0");
-        assertThat(jsonObject.isNull("notes")).isTrue();
+        // Implement code that asserts each element of the JSON document has been
+        // appropriately interpreted and loaded into a JSON object.
 
     }
 
